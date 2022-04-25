@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lagou</groupId>
+    <artifactId>hello_maven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <!--项目名称-->
+            <groupId>javax.servlet</groupId>
+            <!--模块名称-->
+            <artifactId>javax.servlet-api</artifactId>
+            <!--版本-->
+            <version>4.0.1</version>
+            <!--依赖范围-->
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- properties 是全局设置,可以设置整个maven项⽬目的编译器器 JDK版本 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- 重点 -->
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+    <!-- 在build中 我们需要指定⼀一下项⽬目的JDK编译版本,maven默认使⽤用1.5版本进⾏行行编译
+    注意 build 与 dependencies是平级关系,标签不不要写错位置 -->
+    <build>
+        <plugins>
+            <!--maven编译插件-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
